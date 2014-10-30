@@ -6,7 +6,6 @@ from settings import GOOGLE_DOC_URL
 
 
 def get_skills(path, fetch=True):
-
     if not fetch:
         with open(path) as f:
             return json.load(f)
@@ -26,7 +25,6 @@ def get_skills(path, fetch=True):
     skill = deepcopy(skill_template)
 
     for line in skills_text.splitlines():
-        #line = line.encode('ascii', 'replace').rstrip()
         line = line.rstrip()
         bits = re.split('\*\s+', line)
         if len(line) and len(bits) == 2:
