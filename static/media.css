@@ -1,0 +1,131 @@
+/* Custom page CSS
+-------------------------------------------------- */
+
+h1 {
+    font-family: 'Droid Serif', serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Droid Serif', serif;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #004868;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 3px;
+    color: #00587f;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+}
+
+@media print {
+    a:link:after, a:visited:after {
+        content: ""
+    }
+    body {
+        font-family: 'Droid Serif', serif;
+        font-size: 10pt;
+    }
+    h1 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+}
+
+.print-as-one {
+    page-break-inside: avoid;
+}
+
+.tight {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.hrtop {
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.hrbottom {
+    margin-top: 2px;
+    margin-bottom: 7px;
+}
+
+table {
+  width: 100%;
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.min-padding {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.normal-margin {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.row-el {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.list-heading {
+    margin-left: -40px;
+}
