@@ -61,20 +61,17 @@ career = [
         "employer": "ARM",
         "dates": "2005 to 2011",
         "description":
-        """To aid ARM's partners in the design of SoCs and the software to
-        run on them, ARM produces software models of our CPUs and
-        peripherals so SoCs can be simulated at high speed; this was my area
-        of expertise.""",
+        """I implemented models of ARM hardware to aid ARM's partners in the
+        design of SoCs and writing the software to run on them.""",
     },
     {
         "employer": "Imagination Technologies",
         "dates": "2003 to 2005",
         "description":
-        """Imagination Technologies designs low-power graphics and video
-        processors as well as communications products. I implemented precise
-        models of hardware blocks and test harnesses to enable cycle-by-cycle
-        validation of hardware designs. The models were also used by
-        customers to evaluate the hardware.""",
+        """I implemented precise
+        models of video processing hardware to enable cycle-by-cycle
+        validation of hardware designs, and to demonstrate planned functionality
+        to customers.""",
     },
     {
         "employer": "AMCC",

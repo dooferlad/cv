@@ -15,14 +15,15 @@ h2, h3, h4, h5, h6 {
 h2 {
     font-family: 'Roboto Slab', serif;
     font-size: 24px;
-    margin-bottom: 5px;
+    margin-top: 12px;
+    margin-bottom: 6px;
     color: #004868;
 }
 
 h3 {
     font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 3px;
+    margin-top: 4px;
+    margin-bottom: 2px;
     color: #00587f;
 }
 
@@ -86,7 +87,7 @@ body {
 
 .hrbottom {
     margin-top: 2px;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 }
 
 table {
@@ -126,6 +127,6 @@ table {
     border-bottom: 0;
 }
 
-.list-heading {
-    margin-left: -40px;
+ul {
+    margin-bottom: 3px;
 }

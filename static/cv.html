@@ -1,46 +1,41 @@
 <h1>James Tunnicliffe MEng (Hons)</h1>
-<ul class="list-unstyled col-xs-6">
-  <li >84 Maple Avenue</li>
-  <li>Kidlington</li>
-  <li>OX5 1HW</li>
-  <li>UK</li>
-</ul>
-<ul class="list-unstyled col-xs-6">
-  <li>+447779123779</li>
-  <li><a href="mailto:james@nanosheep.org">james@nanosheep.org</a></li>
-</ul>
-
-<div class="col-xs-12">
-  <hr class="hrtop" />
-  <p class="tight"><em>
-    A capable software engineer with over thirteen years of experience in
-    cross-platform, object-orientated programming. Recently specialising in
-    automated service deployments and updates, web service design and responsive
-    UIs implemented in HTML, CSS and JavaScript.
-  </em></p>
-  <hr class="hrbottom" />
-</div>
-
 <div class="container-fluid">
-  <!--div class="print-as-one" ng-repeat="skill in skills track by $index">
-    <h2 ng-if="$first">Key Skills</h2>
-    <h3>{{ skill.names[0] }}</h3>
-    <p ng-repeat="example in skill.examples">
-      {{ example }}
-    </p>
-  </div-->
 
-  <ul>
+  <div class="row">
+    <ul class="list-unstyled col-xs-6">
+      <li >84 Maple Avenue</li>
+      <li>Kidlington</li>
+      <li>OX5 1HW</li>
+      <li>UK</li>
+    </ul>
+    <ul class="list-unstyled col-xs-6">
+      <li>+447779123779</li>
+      <li><a href="mailto:james@nanosheep.org">james@nanosheep.org</a></li>
+    </ul>
+  </div>
+
+  <div class="row col-xs-12">
+    <hr class="hrtop" />
+    <p class="tight"><em>
+      A capable software engineer with over thirteen years of experience in
+      cross-platform, object-orientated programming. Recently specialising in
+      automated service deployments and updates, web service design and responsive
+      UIs implemented in HTML, CSS and JavaScript.
+    </em></p>
+    <hr class="hrbottom" />
+  </div>
+
+  <div class="no-padding">
     <div class="print-as-one" ng-repeat="skill in skills track by $index">
-    <h2 class="list-heading" ng-if="$first">Key Skills</h2>
-    <h3 class="list-heading">{{ skill.names[0] }}</h3>
-    <li ng-repeat="example in skill.examples">
-      {{ example }}
-
-    </li>
-      </div>
-  </ul>
-
+      <h2 ng-if="$first">Key Skills</h2>
+      <h3>{{ skill.names[0] }}</h3>
+      <ul>
+      <li ng-repeat="example in skill.examples">
+        {{ example }}
+      </li>
+      </ul>
+    </div>
+  </div>
   <!--
   <h2>Missing Skills</h2>
   <ul class="list-group">
@@ -50,16 +45,6 @@
     </li>
   </ul>
   -->
-
-  <!--
-  <h2>Open Source Contributions</h2>
-  <ul>
-    <li>List</li>
-    <li>Of</li>
-    <li>Projects that are links on the web to my branches where possible</li>
-  </ul>
-  -->
-
 
   <div class="no-padding">
     <div class="print-as-one" ng-repeat="entry in career">
@@ -71,8 +56,6 @@
       {{ entry.description }}
     </div>
   </div>
-
-
 
   <div class="print-as-one row normal-margin" ng-repeat="entry in education">
     <h2 ng-if="$first">Education & Qualifications</h2>
