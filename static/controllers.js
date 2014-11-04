@@ -6,6 +6,11 @@ var cvControllers = angular.module('cvControllers', []);
 
 cvControllers.controller('CVCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
+        $scope.writing = false;
+
+        $http.get('/API/developer').success(function (data) {
+            $scope.writing = data === 'True';
+        });
 
         $http.get('/API/career').success(function (data) {
             $scope.career = data;
@@ -14,6 +19,7 @@ cvControllers.controller('CVCtrl', ['$scope', '$http', '$routeParams',
             $scope.education = data;
         });
         $http.get('/API/jobs').success(function (data) {
+            $scope.jobs = data;
             $scope.job_index = 0;
             data.some(function (job, index) {
                 if (job.id === $routeParams.id) {

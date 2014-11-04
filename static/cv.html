@@ -36,15 +36,16 @@
       </ul>
     </div>
   </div>
-  <!--
-  <h2>Missing Skills</h2>
-  <ul class="list-group">
-    <li ng-repeat="skill in missing_skills"
-        class="list-group-item list-group-item-danger">
-      {{ skill }}
-    </li>
-  </ul>
-  -->
+
+  <div ng-if="writing">
+    <h2>Missing Skills</h2>
+    <ul class="list-group">
+      <li ng-repeat="skill in missing_skills"
+          class="list-group-item list-group-item-danger">
+        {{ skill }}
+      </li>
+    </ul>
+  </div>
 
   <div class="no-padding">
     <div class="print-as-one" ng-repeat="entry in career">
