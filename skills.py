@@ -11,9 +11,11 @@ BASE_DIR = os.path.dirname(__file__)
 
 def get_skills(fetch=True):
     path = os.path.join(BASE_DIR, "skills.json")
-    if not fetch:
+
+    # Download data if requested to or local copy is missing
+    if not fetch and os.path.isfile(path):
         with open(path) as f:
-            return json.load(f)
+            return f.read()
 
     else:
         skills_dl = requests.get(SKILLS_URL)
@@ -50,7 +52,7 @@ def get_skills(fetch=True):
     with open(path, "w") as f:
         json.dump(skills, f)
 
-    return skills
+    return json.dumps(skills)
 
 def get_jobs(fetch=True):
     path = os.path.join(BASE_DIR, "jobs.json")
@@ -72,9 +74,10 @@ def get_career(fetch=True):
 
 
 def get_list(path, url, fetch, translate_names={}):
-    if not fetch:
+    # Download data if requested to or local copy is missing
+    if not fetch and os.path.isfile(path):
         with open(path) as f:
-            return json.load(f)
+            return f.read()
 
     else:
         skills_dl = requests.get(url)
@@ -108,7 +111,7 @@ def get_list(path, url, fetch, translate_names={}):
     with open(path, "w") as f:
         json.dump(data, f)
 
-    return data
+    return json.dumps(data)
 
 
 if __name__ == '__main__':

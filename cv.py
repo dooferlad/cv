@@ -22,22 +22,22 @@ def hello_world():
 
 @app.route('/API/skills')
 def api_skills():
-    return json.dumps(get_skills(fetch))
+    return get_skills(fetch)
 
 
 @app.route('/API/career')
 def api_career():
-    return json.dumps(get_career(fetch))
+    return get_career(fetch)
 
 
 @app.route('/API/education')
 def api_education():
-    return json.dumps(get_education(fetch))
+    return get_education(fetch)
 
 
 @app.route('/API/jobs')
 def api_jobs():
-    return json.dumps(get_jobs(fetch))
+    return get_jobs(fetch)
 
 
 @app.route('/API/developer')
