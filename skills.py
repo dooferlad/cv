@@ -3,7 +3,7 @@ from copy import deepcopy
 import requests
 import json
 import os
-from settings import SKILLS_URL, JOBS_URL, EDUCATION_URL
+from settings import SKILLS_URL, JOBS_URL, EDUCATION_URL, CAREER_URL
 
 
 BASE_DIR = os.path.dirname(__file__)
@@ -62,8 +62,14 @@ def get_jobs(fetch=True):
     return get_list(path, JOBS_URL, fetch, translate_names)
 
 def get_education(fetch=True):
-    path = os.path.join(BASE_DIR, "jobs.json")
+    path = os.path.join(BASE_DIR, "education.json")
     return get_list(path, EDUCATION_URL, fetch)
+
+
+def get_career(fetch=True):
+    path = os.path.join(BASE_DIR, "career.json")
+    return get_list(path, CAREER_URL, fetch)
+
 
 def get_list(path, url, fetch, translate_names={}):
     if not fetch:
@@ -75,7 +81,7 @@ def get_list(path, url, fetch, translate_names={}):
         skills_dl.encoding = "utf-8-sig"
         skills_text = skills_dl.text
 
-    data = []
+    data = [{}]
     name = None
 
     for line in skills_text.splitlines():
@@ -84,8 +90,6 @@ def get_list(path, url, fetch, translate_names={}):
         if len(line) and len(bits) == 2:
             if bits[0] == '':
                 name = bits[1].lower()
-                if name == 'name':
-                    data.append({})
                 if name in translate_names:
                     name = translate_names[name]
                 if not data[-1].get(name):
@@ -98,70 +102,15 @@ def get_list(path, url, fetch, translate_names={}):
                     data[-1][name] = temp
                 else:
                     data[-1][name].append(bits[1])
+        elif len(line) == 0 and (len(data) == 0 or len(data[-1].keys())):
+            data.append({})
+
     with open(path, "w") as f:
         json.dump(data, f)
 
     return data
 
-career = [
-    {
-        "employer": "ARM/Linaro",
-        "dates": "2011 to 2014",
-        "description":
-        """As a member of the Linaro Infrastructure team I maintained our
-        continuous integration services and developed tools and web
-        applications to aid other software engineers as they improve
-        Linux on ARM.""",
-    },
-    {
-        "employer": "ARM",
-        "dates": "2005 to 2011",
-        "description":
-        """I implemented models of ARM hardware to aid ARM's partners in the
-        design of SoCs and writing the software to run on them.""",
-    },
-    {
-        "employer": "Imagination Technologies",
-        "dates": "2003 to 2005",
-        "description":
-        """I implemented precise
-        models of video processing hardware to enable cycle-by-cycle
-        validation of hardware designs, and to demonstrate planned functionality
-        to customers.""",
-    },
-    {
-        "employer": "AMCC",
-        "dates": "2001 to 2003",
-        "description":
-        """AMCC designs hardware for high-speed networking equipment. I
-        created software models of networking parts to use as a reference
-        for hardware validation and to research algorithms to shape network
-        traffic.""",
-    },
-]
-
-education = [
-    {
-        "institution": "University of Manchester Institute of Science & Technology",
-        "qualifications": ["Microelectronic Systems Engineering: MEng (Hons), 2.1 class"],
-        "dates": "1997 to 2001",
-    },
-    {
-        "institution": "Hull College",
-        "qualifications": [
-            "A Level Mathematics (B)",
-            "BTEC ND Electronics & Communications (Pass)"
-        ],
-        "dates": "1995 to 1997",
-    },
-    {
-        "institution": "Wolfreton School",
-        "qualifications": ["9 GCSEs"],
-        "dates": "1990 to 1995"
-    },
-]
 
 if __name__ == '__main__':
     from pprint import pprint
-    from settings import JOBS_URL, SKILLS_URL
-    pprint(get_jobs("jobs.json", JOBS_URL, True))
+    pprint(get_career())

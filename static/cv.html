@@ -48,7 +48,7 @@
   </div>
 
   <div class="no-padding">
-    <div class="print-as-one" ng-repeat="entry in career">
+    <div class="print-as-one" ng-repeat="entry in career track by $index">
       <h2 ng-if="$first">Career to Date</h2>
       <h4>
         <div class="no-padding col-md-10 col-sm-9 col-xs-8">{{ entry.employer }}</div>
@@ -58,7 +58,7 @@
     </div>
   </div>
 
-  <div class="print-as-one row normal-margin" ng-repeat="entry in education">
+  <div class="print-as-one row normal-margin" ng-repeat="entry in education track by $index">
     <h2 ng-if="$first">Education & Qualifications</h2>
     <h4 class="row-el col-md-4 col-md-push-0 col-sm-9 col-xs-8 no-padding-left">
       {{ entry.institution }}

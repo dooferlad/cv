@@ -5,7 +5,7 @@ from flask import (
 
 import os
 import json
-from skills import get_skills, career, education
+from skills import get_skills, get_career, get_education
 from skills import get_jobs
 
 
@@ -27,12 +27,12 @@ def api_skills():
 
 @app.route('/API/career')
 def api_career():
-    return json.dumps(career)
+    return json.dumps(get_career(fetch))
 
 
 @app.route('/API/education')
 def api_education():
-    return json.dumps(education)
+    return json.dumps(get_education(fetch))
 
 
 @app.route('/API/jobs')
@@ -46,7 +46,7 @@ def api_developer():
 
 
 if __name__ == '__main__':
-    fetch = True
+    fetch = False
     debug = True
     app.debug = debug
     app.run()

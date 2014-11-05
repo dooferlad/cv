@@ -15,9 +15,18 @@ cvControllers.controller('CVCtrl', ['$scope', '$http', '$routeParams',
         $http.get('/API/career').success(function (data) {
             $scope.career = data;
         });
+
         $http.get('/API/education').success(function (data) {
-            $scope.education = data;
+            $scope.education = [];
+            data.every(function (edu) {
+                if (!angular.isArray(edu.qualifications)) {
+                    edu.qualifications = [edu.qualifications];
+                }
+                $scope.education.push(edu);
+                return true;
+            });
         });
+
         $http.get('/API/jobs').success(function (data) {
             $scope.jobs = data;
             $scope.job_index = 0;
