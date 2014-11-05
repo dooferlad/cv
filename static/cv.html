@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div ng-if="writing">
+  <div ng-if="writing && missing_skills.length">
     <h2>Missing Skills</h2>
     <ul class="list-group">
       <li ng-repeat="skill in missing_skills"
