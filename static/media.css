@@ -8,7 +8,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-    font-family: 'Droid Serif', serif;
+    font-family: 'Roboto Slab', serif;
     text-align: left;
 }
 
@@ -22,13 +22,13 @@ h2 {
 
 h3 {
     font-size: 18px;
-    margin-top: 4px;
+    margin-top: 6px;
     margin-bottom: 2px;
     color: #00587f;
 }
 
 h4 {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 body {
@@ -127,6 +127,6 @@ table {
     border-bottom: 0;
 }
 
-ul {
+li {
     margin-bottom: 3px;
 }
